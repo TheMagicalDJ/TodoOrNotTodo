@@ -1,0 +1,21 @@
+﻿@page "{id:int}"
+@model TodoOrNotTodo.Pages.EditModel;
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+
+<h1>Edit Customer - @Model.ToDoTask.Id</h1>
+<form method="post">
+    <div asp-validation-summary="All"></div>
+    <input asp-for="ToDoTask.Id" type="hidden" />
+    <div>
+        <label asp-for="ToDoTask.Task"></label>
+        <div>
+            <input asp-for="ToDoTask.Task" />
+            <span asp-validation-for="ToDoTask.Task"></span>
+        </div>
+    </div>
+
+    <div>
+        <button type="submit">Save</button>
+    </div>
+</form>
