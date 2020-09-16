@@ -34,7 +34,8 @@
                         <td> @Task.Id</td>
                         <td>@Task.Task</td>
                         <td>
-                            <input type="checkbox"/>
+                            <input type="checkbox" data-val="true" data-val-required="The IsChecked field is required." id="IsChecked" name="IsChecked" value="true">
+                            <input name="IsChecked" type="hidden" value="false">
                         </td>
                         <td>
                             <a asp-page="./Edit" asp-route-id="@Task.Id">Edit</a> |

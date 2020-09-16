@@ -11,6 +11,8 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore.InMemory;
 using Microsoft.EntityFrameworkCore;
 using TodoOrNotTodo.Data;
+using TodoOrNotTodo.Models;
+using System.Net.Sockets;
 
 namespace TodoOrNotTodo
 {
