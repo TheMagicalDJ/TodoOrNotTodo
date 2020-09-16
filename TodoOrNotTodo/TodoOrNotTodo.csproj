@@ -5,7 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Pages\TaskList\" />
+    <Compile Remove="Pages\TaskList\**" />
+    <Content Remove="Pages\TaskList\**" />
+    <EmbeddedResource Remove="Pages\TaskList\**" />
+    <None Remove="Pages\TaskList\**" />
   </ItemGroup>
 
   <ItemGroup>

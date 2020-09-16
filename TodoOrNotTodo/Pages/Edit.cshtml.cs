@@ -20,13 +20,13 @@ namespace TodoOrNotTodo.Pages
         }
 
         [BindProperty]
-        public ToDoTask ToDoTask { get; set; }
+        public ToDoTask TodoTakeObject { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int id)
         {
-            ToDoTask = await _context.Todos.FindAsync(id);
+            TodoTakeObject = await _context.Todos.FindAsync(id);
 
-            if (ToDoTask == null)
+            if (TodoTakeObject == null)
             {
                 return RedirectToPage("./Index");
             }
@@ -41,7 +41,7 @@ namespace TodoOrNotTodo.Pages
                 return Page();
             }
 
-            _context.Attach(ToDoTask).State = EntityState.Modified;
+            _context.Attach(TodoTakeObject).State = EntityState.Modified;
 
             try
             {
@@ -49,7 +49,7 @@ namespace TodoOrNotTodo.Pages
             }
             catch (DbUpdateConcurrencyException)
             {
-                throw new Exception($"Customer {ToDoTask.Id} not found!");
+                throw new Exception($"Task! {TodoTakeObject.Id} not found!");
             }
 
             return RedirectToPage("./Index");

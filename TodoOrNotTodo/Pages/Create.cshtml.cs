@@ -25,7 +25,7 @@ namespace TodoOrNotTodo.Pages
         }
 
         [BindProperty]
-        public ToDoTask TodoTakeName { get; set; }
+        public ToDoTask TodoTakeObject { get; set; }
 
         public async Task<IActionResult> OnPostAsync()
         {
@@ -34,7 +34,7 @@ namespace TodoOrNotTodo.Pages
                 return Page();
             }
 
-            _context.Todos.Add(TodoTakeName);
+            _context.Todos.Add(TodoTakeObject);
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");

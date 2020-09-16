@@ -4,10 +4,10 @@
     ViewData["Title"] = "Home page";
 }
 
-<h1>Contacts home page</h1>
+<h1>ToDO home page</h1>
 <form method="post">
 
-    <ul>
+    @*<ul>
         @for (var i = 0; i < Model.ToDoTasks.Count; i++)
         {
             <li>
@@ -17,22 +17,24 @@
                 <input type="hidden" asp-for="@Model.ToDoTasks[i]Task." />
             </li>
         }
-    </ul>
+    </ul>*@
 
-    @*<table class="table">
+    <table class="table">
             <thead>
                 <tr>
                     <th>ID</th>
                     <th>Task To Do</th>
+                    <th>Er opgaven udført?</th>
                 </tr>
             </thead>
             <tbody>
                 @foreach (var Task in Model.ToDoTasks)
                 {
                     <tr>
-                        <td> @Task.Id  </td>
+                        <td> @Task.Id</td>
                         <td>@Task.Task</td>
                         <td>
+                            <input type="checkbox"/>
                         </td>
                         <td>
                             <a asp-page="./Edit" asp-route-id="@Task.Id">Edit</a> |
@@ -45,5 +47,5 @@
                 }
             </tbody>
         </table>
-        <a asp-page="Create">Create New Task</a>*@
+        <a asp-page="Create">Create New Task</a>
 </form>
